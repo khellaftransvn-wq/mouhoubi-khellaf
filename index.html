@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classification tarifaire</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Assistant douane</p>
+          <h1>Application de classification tarifaire</h1>
+          <p class="intro">
+            Saisissez une désignation commerciale ou une référence produit pour obtenir une
+            proposition de position tarifaire, les critères de contrôle et les questions à poser
+            avant validation.
+          </p>
+        </div>
+        <div class="notice">
+          <strong>Important</strong>
+          <span>La proposition est indicative. La position définitive dépend des règles SH/NC, de la composition, de l'usage et des documents techniques.</span>
+        </div>
+      </section>
+
+      <section class="classifier-card" aria-labelledby="search-title">
+        <h2 id="search-title">Rechercher une position</h2>
+        <form id="classification-form" class="search-form">
+          <label for="product-input">Désignation ou référence</label>
+          <div class="input-row">
+            <input
+              id="product-input"
+              name="designation"
+              type="text"
+              placeholder="Ex. moteur électrique 220V, chemise coton, pompe hydraulique..."
+              autocomplete="off"
+              required
+            />
+            <button type="submit">Classifier</button>
+          </div>
+        </form>
+
+        <div id="result" class="result empty" aria-live="polite">
+          <p>Entrez une marchandise pour afficher une proposition.</p>
+        </div>
+      </section>
+
+      <section class="examples" aria-labelledby="examples-title">
+        <h2 id="examples-title">Exemples rapides</h2>
+        <div id="examples-list" class="chips"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
